@@ -6,11 +6,13 @@ class Zeroclaw < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
-    depends_on arch: :arm64
-
     on_arm do
       url "https://github.com/zeroclaw-labs/zeroclaw/releases/download/v0.8.1/zeroclaw-aarch64-apple-darwin.tar.gz"
       sha256 "d37c15aba3e4e6ec622d305b3d36172964a1239245704fb758e1d01560362841"
+    end
+
+    on_intel do
+      depends_on "rust" => :build
     end
   end
 
@@ -25,6 +27,12 @@ class Zeroclaw < Formula
   end
 
   def install
+    if File.exist?("Cargo.toml")
+      system "cargo", "install", *std_cargo_args(path: ".")
+      system "cargo", "install", *std_cargo_args(path: "apps/zerocode")
+      return
+    end
+
     libexec.install "zeroclaw"
     libexec.install "zerocode"
     libexec.install "web" if Dir.exist?("web")
