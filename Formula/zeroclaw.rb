@@ -12,7 +12,8 @@ class Zeroclaw < Formula
     end
 
     on_intel do
-      depends_on "rust" => :build
+      url "https://github.com/zeroclaw-labs/zeroclaw/releases/download/v0.8.1/zeroclaw-x86_64-apple-darwin.tar.gz"
+      sha256 "bc295ce9944e563c02049fddc4b720660f489a482fe1e14a22cba42fee7c9347"
     end
   end
 
