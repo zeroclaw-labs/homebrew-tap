@@ -1,15 +1,17 @@
 class Zeroclaw < Formula
   desc "Rust-first autonomous agent runtime"
   homepage "https://github.com/zeroclaw-labs/zeroclaw"
+  url "https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.8.1.tar.gz"
   version "0.8.1"
+  sha256 "309cac6640481e7067f5cef041b83b13b8cdd7ca6747a5bf4a461a6b0ea5246b"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
-    if Hardware::CPU.arm?
+    depends_on arch: :arm64
+
+    on_arm do
       url "https://github.com/zeroclaw-labs/zeroclaw/releases/download/v0.8.1/zeroclaw-aarch64-apple-darwin.tar.gz"
       sha256 "d37c15aba3e4e6ec622d305b3d36172964a1239245704fb758e1d01560362841"
-    else
-      odie "ZeroClaw does not currently publish an Intel macOS Homebrew artifact"
     end
   end
 
