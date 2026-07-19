@@ -2,7 +2,6 @@ class Zeroclaw < Formula
   desc "Rust-first autonomous agent runtime"
   homepage "https://github.com/zeroclaw-labs/zeroclaw"
   url "https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.8.3.tar.gz"
-  version "0.8.3"
   sha256 "9dd537164012bd122cdc4837b09a20146ea3311aa493cd642a870778871f0d27"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -14,6 +13,7 @@ class Zeroclaw < Formula
 
     on_intel do
       url "https://github.com/zeroclaw-labs/zeroclaw/releases/download/v0.8.3/zeroclaw-x86_64-apple-darwin.tar.gz"
+      version "0.8.3"
       sha256 "b85761b90429e101369b8f93b3558b8bc54b47c4fbb7052a4f1913dbebd1ab7d"
     end
   end
@@ -24,6 +24,7 @@ class Zeroclaw < Formula
       sha256 "d910d98821f13eaf7cd2037785fd95bb0a9e14700cb71cadea9c8d9328cf8e66"
     else
       url "https://github.com/zeroclaw-labs/zeroclaw/releases/download/v0.8.3/zeroclaw-x86_64-unknown-linux-gnu.tar.gz"
+      version "0.8.3"
       sha256 "662abfa20afc5790538e69aebc1be60e188d34ba64f96fd81505bbcdd8edce44"
     end
   end
