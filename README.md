@@ -1,18 +1,26 @@
-# Zeroclaw-labs Tap
+# ZeroClaw Homebrew Compatibility Tap
 
-## How do I install these formulae?
+ZeroClaw is available from Homebrew Core, which installs both the `zeroclaw` runtime and the `zerocode` TUI. New installations should use:
 
-`brew install zeroclaw-labs/tap/<formula>`
-
-Or `brew tap zeroclaw-labs/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "zeroclaw-labs/tap"
-brew "<formula>"
+```sh
+brew install zeroclaw
 ```
 
-## Documentation
+This compatibility tap remains temporarily available for existing users but is deprecated and will not receive further version updates.
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+## Migration
+
+Move an existing tap installation to Homebrew Core with:
+
+```sh
+brew uninstall zeroclaw-labs/tap/zeroclaw
+brew untap zeroclaw-labs/tap
+brew install zeroclaw
+```
+
+Verify the installed versions match:
+
+```sh
+zeroclaw --version
+zerocode --version
+```
