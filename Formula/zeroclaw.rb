@@ -5,6 +5,7 @@ class Zeroclaw < Formula
   sha256 "9dd537164012bd122cdc4837b09a20146ea3311aa493cd642a870778871f0d27"
   license any_of: ["MIT", "Apache-2.0"]
   version_scheme 1
+  deprecate! date: "2026-07-20", because: "is now available from Homebrew/core"
 
   on_macos do
     on_arm do

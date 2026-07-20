@@ -1,12 +1,21 @@
 # ZeroClaw Homebrew Compatibility Tap
 
-ZeroClaw is moving to the formula in Homebrew Core. This compatibility tap remains available for existing users and currently installs both the `zeroclaw` runtime and the `zerocode` TUI.
-
-Until the Core formula includes both binaries, install or upgrade from this tap:
+ZeroClaw is available from Homebrew Core, which installs both the `zeroclaw` runtime and the `zerocode` TUI. New installations should use:
 
 ```sh
-brew install zeroclaw-labs/tap/zeroclaw
-brew upgrade zeroclaw-labs/tap/zeroclaw
+brew install zeroclaw
+```
+
+This compatibility tap remains temporarily available for existing users but is deprecated and will not receive further version updates.
+
+## Migration
+
+Move an existing tap installation to Homebrew Core with:
+
+```sh
+brew uninstall zeroclaw-labs/tap/zeroclaw
+brew untap zeroclaw-labs/tap
+brew install zeroclaw
 ```
 
 Verify the installed versions match:
@@ -14,14 +23,4 @@ Verify the installed versions match:
 ```sh
 zeroclaw --version
 zerocode --version
-```
-
-## Migration
-
-After the Homebrew Core formula installs both binaries, migrate with:
-
-```sh
-brew uninstall zeroclaw-labs/tap/zeroclaw
-brew untap zeroclaw-labs/tap
-brew install zeroclaw
 ```
